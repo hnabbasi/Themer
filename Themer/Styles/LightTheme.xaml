@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Themer.Styles.LightTheme">
+
+    <Color x:Key="BackgroundColor">#FFe0e0e0</Color>
+    <Color x:Key="FrameColor">#FFFFFFFF</Color>
+    <Color x:Key="TextPrimaryColor">#B0000000</Color>
+    <Color x:Key="TextSecondaryColor">#858585</Color>
+    <Style x:Key="Title" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}"/>
+        <Setter Property="FontSize" Value="Large"/>
+    </Style>
+</ResourceDictionary>
