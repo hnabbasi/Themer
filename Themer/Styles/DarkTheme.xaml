@@ -3,7 +3,7 @@
              x:Class="Themer.Styles.DarkTheme">
  
     <Color x:Key="BackgroundColor">#FF000000</Color>
-    <Color x:Key="FrameColor">#FF000000</Color>
+    <Color x:Key="FrameColor">#FF1f1f1f</Color>
     <Color x:Key="TextPrimaryColor">#B0FFFFFF</Color>
     <Color x:Key="TextSecondaryColor">#eFeFeF</Color>
 

@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Themer.MainPage"
+             Title="Profile"
              BackgroundColor="{DynamicResource BackgroundColor}">
     <Frame HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"
            BackgroundColor="{DynamicResource FrameColor}">

@@ -6,10 +6,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content.Res;
+using Themer.Styles;
+using Android.Content;
 
 namespace Themer.Droid
 {
-    [Activity(Label = "Themer", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Themer", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTask)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -22,12 +25,45 @@ namespace Themer.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            SetAppTheme();
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        void SetAppTheme()
+        {
+            if (Resources.Configuration.UiMode.HasFlag(UiMode.NightYes))
+            {
+                SetTheme(Themer.Theme.Dark);
+            }
+            else
+            {
+                SetTheme(Themer.Theme.Light);
+            }
+        }
+
+        void SetTheme(Theme mode)
+        {
+            if (mode == Themer.Theme.Dark)
+            {
+                if (App.AppTheme == Themer.Theme.Dark)
+                    return;
+
+                App.Current.Resources = new DarkTheme();
+
+                App.AppTheme = Themer.Theme.Dark;
+            }
+            else
+            {
+                if (App.AppTheme != Themer.Theme.Dark)
+                    return;
+                App.Current.Resources = new LightTheme();
+                App.AppTheme = Themer.Theme.Light;
+            }
         }
     }
 }
