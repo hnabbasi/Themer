@@ -5797,7 +5797,10 @@ namespace Themer.Droid
 			public const int tooltip_frame_light = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int twitter = 2131165303;
+			public const int twitch = 2131165303;
+			
+			// aapt resource value: 0x7F070078
+			public const int twitter = 2131165304;
 			
 			static Drawable()
 			{

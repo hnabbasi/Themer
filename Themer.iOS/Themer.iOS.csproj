@@ -118,6 +118,9 @@
     <ImageAsset Include="Assets.xcassets\twitter.imageset\icons8-twitter-50.png" />
     <ImageAsset Include="Assets.xcassets\github.imageset\icons8-github-50-1.png" />
     <ImageAsset Include="Assets.xcassets\twitter.imageset\icons8-twitter-50-1.png" />
+    <ImageAsset Include="Assets.xcassets\twitch.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\twitch.imageset\icons8-twitch-50%282%29.png" />
+    <ImageAsset Include="Assets.xcassets\twitch.imageset\icons8-twitch-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -128,8 +131,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -142,5 +145,6 @@
     <Folder Include="Assets.xcassets\twitter.imageset\" />
     <Folder Include="Assets.xcassets\github.imageset\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Assets.xcassets\twitch.imageset\" />
   </ItemGroup>
 </Project>

@@ -9,17 +9,22 @@
              BackgroundColor="{DynamicResource BackgroundColor}">
     <Frame HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"
            BackgroundColor="{DynamicResource FrameColor}">
-    <StackLayout>
-        <Image Source="https://www.gravatar.com/avatar/2aa6ceb4a388629a891838b9bddf88e0?s=80" HeightRequest="80" Aspect="AspectFit"/>
+    <StackLayout Spacing="10">
+        <Image Source="https://www.gravatar.com/avatar/2aa6ceb4a388629a891838b9bddf88e0" HeightRequest="80" Aspect="AspectFit"/>
         <Label Text="Hussain Abbasi" HorizontalTextAlignment="Center" Margin="0,0,0,40"
                Style="{DynamicResource Title}"/>
         <StackLayout Orientation="Horizontal">
-            <Image Source="twitter" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+            <Image Source="twitter" HeightRequest="30" Aspect="AspectFit"/>
             <Label Text="HussainNAbbasi" VerticalOptions="Center"
                    TextColor="{DynamicResource TextSecondaryColor}"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-            <Image Source="github" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+            <Image Source="twitch" HeightRequest="30" Aspect="AspectFit"/>
+            <Label Text="HussainAbbasi" VerticalOptions="Center"
+                   TextColor="{DynamicResource TextSecondaryColor}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="github" HeightRequest="30" Aspect="AspectFit"/>
             <Label Text="HNAbbasi" VerticalOptions="Center"
                    TextColor="{DynamicResource TextSecondaryColor}"/>
         </StackLayout>

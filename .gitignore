@@ -299,3 +299,5 @@ __pycache__/
 *.xsd.cs
 
 .mfractor
+Themer.Android/Resources/Resource.designer.cs
+Themer.iOS/Assets.xcassets/.DS_Store
