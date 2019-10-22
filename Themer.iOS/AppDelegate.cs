@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Themer.Styles;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Themer.iOS
 {
@@ -23,9 +25,22 @@ namespace Themer.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            MessagingCenter.Subscribe<Page, Theme>(this, "ModeChanged", callback: OnModeChanged);
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void OnModeChanged(Page page, Theme theme)
+        {
+            App.AppTheme = theme;
+            Window.OverrideUserInterfaceStyle = theme == Theme.Dark
+                ? UIUserInterfaceStyle.Dark
+                : UIUserInterfaceStyle.Light;
+
+            App.Current.Resources = theme == Theme.Light
+                ? (ResourceDictionary)new LightTheme()
+                : (ResourceDictionary)new DarkTheme();
         }
     }
 }

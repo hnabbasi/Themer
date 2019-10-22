@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Content.Res;
 using Themer.Styles;
 using Android.Content;
+using Xamarin.Forms;
+using Android.Support.V7.App;
 
 namespace Themer.Droid
 {
@@ -24,8 +26,22 @@ namespace Themer.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
             LoadApplication(new App());
             SetAppTheme();
+            MessagingCenter.Subscribe<Page, Theme>(this, "ModeChanged", callback: OnModeChanged);
+        }
+
+        private void OnModeChanged(Page arg1, Theme theme)
+        {
+            if(theme == Themer.Theme.Light)
+            {
+                Delegate.SetLocalNightMode(AppCompatDelegate.ModeNightNo);
+            } else
+            {
+                Delegate.SetLocalNightMode(AppCompatDelegate.ModeNightYes);
+            }
+            SetTheme(theme);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -52,18 +68,15 @@ namespace Themer.Droid
             {
                 if (App.AppTheme == Themer.Theme.Dark)
                     return;
-
                 App.Current.Resources = new DarkTheme();
-
-                App.AppTheme = Themer.Theme.Dark;
             }
             else
             {
                 if (App.AppTheme != Themer.Theme.Dark)
                     return;
                 App.Current.Resources = new LightTheme();
-                App.AppTheme = Themer.Theme.Light;
             }
+            App.AppTheme = mode;
         }
     }
 }

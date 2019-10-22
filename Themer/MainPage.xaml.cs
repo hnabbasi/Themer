@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Themer
@@ -16,6 +12,32 @@ namespace Themer
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        public void Handle_ModeChange(object sender, EventArgs e)
+        {
+            Theme themeRequested = App.AppTheme == Theme.Light ? Theme.Dark : Theme.Light;
+            MessagingCenter.Send<Page, Theme>(this, "ModeChanged", themeRequested);
+            SetIcon();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SetIcon();
+        }
+
+        void SetIcon()
+        {
+            if (App.AppTheme == Theme.Light)
+            {
+                ModeMenuItem.IconImageSource = "moon.png";
+            }
+            else
+            {
+
+                ModeMenuItem.IconImageSource = "sun.png";
+            }
         }
     }
 }

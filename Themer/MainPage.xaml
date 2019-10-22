@@ -7,6 +7,9 @@
              x:Class="Themer.MainPage"
              Title="Profile"
              BackgroundColor="{DynamicResource BackgroundColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ModeMenuItem" Text="Menu" IconImageSource="moon" Clicked="Handle_ModeChange"/>
+    </ContentPage.ToolbarItems>
     <Frame HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="20"
            BackgroundColor="{DynamicResource FrameColor}">
     <StackLayout Spacing="10">

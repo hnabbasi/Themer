@@ -121,6 +121,10 @@
     <ImageAsset Include="Assets.xcassets\twitch.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\twitch.imageset\icons8-twitch-50%282%29.png" />
     <ImageAsset Include="Assets.xcassets\twitch.imageset\icons8-twitch-50.png" />
+    <ImageAsset Include="Assets.xcassets\sun.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\moon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\moon.imageset\icons8-moon-symbol-50.png" />
+    <ImageAsset Include="Assets.xcassets\sun.imageset\icons8-summer-50%281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -146,5 +150,7 @@
     <Folder Include="Assets.xcassets\github.imageset\" />
     <Folder Include="Renderers\" />
     <Folder Include="Assets.xcassets\twitch.imageset\" />
+    <Folder Include="Assets.xcassets\sun.imageset\" />
+    <Folder Include="Assets.xcassets\moon.imageset\" />
   </ItemGroup>
 </Project>
