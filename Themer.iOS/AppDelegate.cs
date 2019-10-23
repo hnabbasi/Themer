@@ -30,17 +30,31 @@ namespace Themer.iOS
 
             return base.FinishedLaunching(app, options);
         }
-
+        
         private void OnModeChanged(Page page, Theme theme)
         {
-            App.AppTheme = theme;
-            Window.OverrideUserInterfaceStyle = theme == Theme.Dark
+            SetTheme(theme);
+        }
+
+        void SetTheme(Theme mode)
+        {
+            Window.OverrideUserInterfaceStyle = mode == Theme.Dark
                 ? UIUserInterfaceStyle.Dark
                 : UIUserInterfaceStyle.Light;
 
-            App.Current.Resources = theme == Theme.Light
-                ? (ResourceDictionary)new LightTheme()
-                : (ResourceDictionary)new DarkTheme();
+            if (mode == Themer.Theme.Dark)
+            {
+                if (App.AppTheme == Themer.Theme.Dark)
+                    return;
+                App.Current.Resources = new DarkTheme();
+            }
+            else
+            {
+                if (App.AppTheme != Themer.Theme.Dark)
+                    return;
+                App.Current.Resources = new LightTheme();
+            }
+            App.AppTheme = mode;
         }
     }
 }

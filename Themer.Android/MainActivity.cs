@@ -53,13 +53,9 @@ namespace Themer.Droid
         void SetAppTheme()
         {
             if (Resources.Configuration.UiMode.HasFlag(UiMode.NightYes))
-            {
                 SetTheme(Themer.Theme.Dark);
-            }
             else
-            {
                 SetTheme(Themer.Theme.Light);
-            }
         }
 
         void SetTheme(Theme mode)
